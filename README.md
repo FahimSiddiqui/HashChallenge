@@ -10,28 +10,41 @@ Note: There are no cache eviction logic written(as of now) but LRU could have be
 Hash generator internally uses Goroutines to maximize the usage of CPUs and improving the performance of the operations. Tool also has an ability to limit the number of parallel requests to prevent local resources.
 
 
-**Usage**
+
+**Usage:**
 
 In order to run it on local, kindly make sure you have GO installed and configured properly.
 Tool accepts a flag called `-parallel` to limit the maximum number of parallel requests. If not provided, it will be set to 10 by default.
 
 Build the project: Use command `go build`, which will create a `HashChallenge.exe` in the main folder of the repository.
+
 Run the project: Use command `.\HashChallenge -parallel=2 http://google.com facebook.com twitter.com google.com`
+
 Expected output of above command:
+
+
 http://google.com a9c4c891e975d3cfcab4607b4d7c18a1
+
 http://facebook.com 08165d33fe6ca698bfcbfb5a2c65eaee
+
 http://google.com a9c4c891e975d3cfcab4607b4d7c18a1
+
 http://twitter.com 1e49a4450a5c2adff5e3b367d58e0419
+
 
 Refer: Please refer `Sample_Run_HashGenerator.txt` which has more integration test-cases defined. For integration test-cases in production, we can use integation-automations-tools to cover if not all then most of the end-to-end flows upfront.
 
-**Test**
+
+
+**Test:**
 
 HashGenerator tool comes with set of unit test cases across different packages. Not all the edge cases are captured but basic set of test cases written for each function/functionality test before the tool hits production.
 
 How to test: Use command `go test -v ./...` it will go through each package and run the test case. Ideally all the test-cases should pass. Test cases are written in a niave approach where `if..else` is used to check if something will pass or fail. In production `GoConvey` package can be used to simplify & group more and more test cases.
 
-**Assumptions**
+
+
+**Assumptions:**
 
 1. If HTTP scheme is not provided in the input URL, this tool will add as prefix.
 2. Only MD5 hash will be created for the input. Used a factory-design pattern to switch to different hashing algorithms in future.
@@ -40,7 +53,7 @@ How to test: Use command `go test -v ./...` it will go through each package and 
 5. Demonstrated the behaviour of Logging mechanism using simple print statements but it can be further well-designed & used using `Logrus` package.
 
 
-**Future Scope**
+**Future Scope:**
 
 HashGenerator is a demonstration tool to take URLs as input, hit the URLs, generate hash value of the output and print it. In future we can implement it in the form of REST APIs, use better logging techniques, implement more and more hashing algorithms, a REDIS cache, other golang packages to simplify test cases, 
 
