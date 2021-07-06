@@ -1,0 +1,56 @@
+.\HashChallenge -parallel=2 google.com facebook.com twitter.com google.com
+Maximum number of concurrent requests Limit - Parallel:2
+cache initialiazed
+http://google.com a9c4c891e975d3cfcab4607b4d7c18a1
+http://facebook.com 08165d33fe6ca698bfcbfb5a2c65eaee
+http://google.com a9c4c891e975d3cfcab4607b4d7c18a1
+http://twitter.com 1e49a4450a5c2adff5e3b367d58e0419
+
+
+.\HashChallenge google.com facebook.com twitter.com google.com
+
+Maximum number of concurrent requests Limit - Parallel:10
+cache initialiazed
+http://google.com 2fa1b2ccf48635c0a728e69d0a3ff3cf
+http://google.com b4f532fbf5a0feaa727cae54c6885911
+http://twitter.com 99bd0b444b3a3a1c5df7eed5454ac635
+http://facebook.com 56750fffb0f79d530724df19f5af1a01
+
+
+.\HashChallenge -parallel=2
+Maximum number of concurrent requests Limit - Parallel:2
+Invalid Input -  Invalid arguments
+
+.\HashChallenge
+Maximum number of concurrent requests Limit - Parallel:10
+Invalid Input -  Invalid arguments
+
+
+
+.\HashChallenge -parallel=2 google.com facebook.com twitter.com google.com instragram.com yandex.com http://adjust.com http://google.com reddit.com/r/funny facebook.com yahoo.com reddit.com/r/notfunny
+2021/07/04 16:11:09 Maximum number of concurrent requests Limit - Parallel:2
+2021-07-04 16:11:09.4227726 +0530 IST m=+0.016970301
+2021-07-04 16:11:09.4227726 +0530 IST m=+0.016970301
+2021/07/04 16:11:12 cache initialiazed
+2021-07-04 16:11:12.676967 +0530 IST m=+3.271164701
+2021-07-04 16:11:13.4821325 +0530 IST m=+4.076330201
+2021-07-04 16:11:16.4841383 +0530 IST m=+7.078336001
+2021-07-04 16:11:16.6747424 +0530 IST m=+7.268940101
+2021-07-04 16:11:20.2558443 +0530 IST m=+10.850042001
+2021-07-04 16:11:20.6112703 +0530 IST m=+11.205468001
+2021-07-04 16:11:23.6149561 +0530 IST m=+14.209153801
+2021-07-04 16:11:24.4812954 +0530 IST m=+15.075493101
+2021-07-04 16:11:27.4849623 +0530 IST m=+18.079160001
+2021-07-04 16:11:28.0047978 +0530 IST m=+18.598995501
+http://google.com 5de049e37cf39a17467e6a002f46e8e8
+http://facebook.com 6d98c19d961b5d96a9daf61022510c85
+http://google.com 5de049e37cf39a17467e6a002f46e8e8
+http://twitter.com 61498fd48c65067f122b60cf71abc20c
+http://instragram.com 4c2941190726dc06cb4ef76cf9aa193c       
+http://yandex.com 1eb96b0a41f8956c46af348bf67689fd
+http://google.com 5de049e37cf39a17467e6a002f46e8e8
+http://adjust.com 0926d7b3fbb30606988e5ea5eaf65f72
+http://facebook.com 6d98c19d961b5d96a9daf61022510c85
+http://reddit.com/r/funny 9213bd0c41f0e892635330231a18f640   
+http://reddit.com/r/notfunny 49340f4d1bc43db0eba195df179539f9
+http://yahoo.com e8eec7189761cd07716039fd7aadee90
